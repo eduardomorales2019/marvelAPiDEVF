@@ -1,0 +1,100 @@
+/* // Mis variables  */
+:root {
+  --main-radius: 5px;
+  --main-padding: 5px;
+  --color-red: #f11e22;
+  --color-yellow: #ffd371;
+  --color-green1: #c2ffd9;
+  --color-green2: #9ddac6;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.logo_marvel {
+  width: 200px;
+  height: 100px;
+}
+
+.container__upper {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  grid-template-rows: 0.5fr 0.5fr 1.5fr 0.8fr 0.8fr;
+  grid-template-areas:
+    "nav nav nav nav"
+    "header header header header"
+    "sideBar content content content"
+    "sideBar content  content content"
+    "sideBar footer footer footer";
+
+  gap: 0.8rem;
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: justify;
+}
+
+nav {
+  grid-area: nav;
+  border-radius: var(--main-radius);
+  padding-top: (var(--main-padding));
+  background-color: var(--color-red);
+}
+
+header {
+  grid-area: header;
+  border-radius: var(--main-radius);
+  padding-top: (var(--main-padding));
+  background-color: var(--color-green2);
+}
+
+#sidebar {
+  grid-area: sideBar;
+  border-radius: var(--main-radius);
+  padding-top: (var(--main-padding));
+  background-color: var(--color-yellow);
+}
+
+#content {
+  grid-area: content;
+  border-radius: var(--main-radius);
+  padding-top: (var(--main-padding));
+  background-color: var(--color-red);
+}
+
+footer {
+  grid-area: footer;
+  border-radius: var(--main-radius);
+  padding-top: (var(--main-padding));
+  background-color: black;
+}
+/* =====================================================social media --> */
+* img {
+  width: 90px;
+  height: 30%;
+  position: relative;
+}
+
+/* =====================================================social media -- / */
+
+/* // mediaQuerries para mobile first  */
+@media only screen and (max-width: 575px) {
+  .container__upper {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+    grid-template-areas:
+      "nav"
+      "header"
+      "sideBar"
+      "content"
+      "footer";
+  }
+}
